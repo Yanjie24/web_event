@@ -25,7 +25,7 @@ $(function () {
                 }
                 renderAvatar(res.data)
                 
-            },
+            }
             // 无论成功失败都会执行complete回调
             // complete: function (res) {
             //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
@@ -48,4 +48,5 @@ $(function () {
             $('.text-avatar').html(first).show()
         }
     }
+    
 })

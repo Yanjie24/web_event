@@ -35,24 +35,25 @@ $(function () {
                 $('#link_login').click()
            
             })
-        $('#form_login').on('submit', function (e) {
-            e.preventDefault()
-            $.ajax({
-                url: '/api/login',
-                method: 'POST',
-                data: $(this).serialize(),
-                success: function (res) {
-                    if (res.status !== 0) {
-                        return layer.msg('登陆失败')
-                    } layer.msg('登陆成功')
-                    // 将得到的token字符串保存到localstorage中
-                    localStorage.setItem('token',res.token)
-                    location.href = '/index.html'
-                    // console.log(res.token);
-                    
-                }
+        
+    })
+    $('#form_login').on('submit', function (e) {
+        e.preventDefault()
+        $.ajax({
+            url: '/api/login',
+            method: 'POST',
+            data: $(this).serialize(),
+            success: function (res) {
+                if (res.status !== 0) {
+                    return layer.msg('登陆失败')
+                } layer.msg('登陆成功')
+                // 将得到的token字符串保存到localstorage中
+                localStorage.setItem('token', res.token)
+                location.href = '/index.html'
+                // console.log(res.token);
+                
             }
-            )
-        })
+        }
+        )
     })
 })
